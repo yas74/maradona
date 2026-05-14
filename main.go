@@ -29,10 +29,10 @@ func healthCheck(c echo.Context) error {
 	})
 }
 
-func getEnv(k, d string) string {
-	if v := os.Getenv(k); v != "" {
+func getEnv(key, fallback string) string {
+	if v := os.Getenv(key); v != "" {
 		return v
 	}
 
-	return d
+	return fallback
 }
